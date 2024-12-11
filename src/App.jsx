@@ -2,10 +2,11 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+import ToDoItems from './ToDoItems'
 
 function App() {
   const [inputText, setInputText] = useState("");
-  const [toDoItems, setToDoItems] = useState([]);
+  const [toDoItemsLi, setToDoItems] = useState([]);
 
   function handleChange(event) {
     const newUserInput = event.target.value;
@@ -17,6 +18,7 @@ function App() {
     });
     setInputText("");
   }
+
 
   return (
     <div className="container">
@@ -30,11 +32,12 @@ function App() {
         </button>
       </div>
       <div>
-        <ul>
+        < ToDoItems hereIsProps = {toDoItemsLi} />
+        {/* <ul>
           {toDoItems.map((items, index) => (
             <li key={index}>{items}</li>
           ))}
-        </ul>
+        </ul> */}
       </div>
     </div>
   );
