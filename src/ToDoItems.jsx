@@ -5,7 +5,7 @@ import React from "react";
 
 
 function ToDoItems(props){
-
+    // li state check indiviually
     const [liClicked, setLiClicked] = useState([]);
 
     function handleLiClicked(index){
@@ -34,40 +34,3 @@ function ToDoItems(props){
 
 
 export default ToDoItems;
-
-
-
-// import { useState } from "react";
-// import React from "react";
-
-// function ToDoItems(props) {
-//   // 用一個陣列追蹤每個項目的點擊狀態
-//   const [clickedItems, setClickedItems] = useState([]);
-
-//   function handleLiClicked(index) {
-//     // 切換對應項目的點擊狀態
-//     setClickedItems((prevState) => {
-//       const newClickedState = [...prevState];
-//       newClickedState[index] = !newClickedState[index];
-//       return newClickedState;
-//     });
-//   }
-
-//   return (
-//     <ul>
-//       {props.hereIsProps.map((currentValue, index) => (
-//         <li
-//           key={index}
-//           onClick={() => handleLiClicked(index)}
-//           style={{
-//             textDecoration: clickedItems[index] ? "line-through" : "none",
-//           }}
-//         >
-//           {currentValue}
-//         </li>
-//       ))}
-//     </ul>
-//   );
-// }
-
-// export default ToDoItems;
