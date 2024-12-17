@@ -6,10 +6,10 @@ import React from "react";
 
 function ToDoItems(props){
     // li state check indiviually
-    const [liClicked, setLiClicked] = useState([]);
-
+    // const [liClicked, setLiClicked] = useState([]);
+    const [liClicked, setLiClicked] = useState(Array(props.hereIsProps).length.fill(false));
     function handleLiClicked(index){
-        console.log("li Clicked")
+        console.log("li bring in index")
         setLiClicked((prevState)=>{
            const newLiClickedState = [...prevState];
            newLiClickedState[index] = !newLiClickedState[index];
