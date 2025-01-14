@@ -18,6 +18,18 @@ function App() {
     });
     setInputText("");
   }
+////// if double clicked on li, delete on that li
+
+  function deleteOnDoubleClicked(userClickedIndex){
+    setToDoItems((prevItems)=>{
+      return prevItems.filter((item,index)=>{
+        console.log("Double clicked");
+        return index !== userClickedIndex;
+        
+      })
+    })
+
+  }
 
 
   return (
@@ -32,7 +44,7 @@ function App() {
         </button>
       </div>
       <div>
-        < ToDoItems hereIsProps = {toDoItemsLi} />
+        < ToDoItems hereIsProps = {toDoItemsLi} onDoubleClick = {deleteOnDoubleClicked} />
         {/* <ul>
           {toDoItems.map((items, index) => (
             <li key={index}>{items}</li>
