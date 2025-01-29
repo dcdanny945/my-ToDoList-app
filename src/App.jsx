@@ -5,7 +5,7 @@ import './App.css'
 import ToDoItems from './ToDoItems'
 
 function App() {
-  const [inputText, setInputText] = useState("");
+  const [inputText, setInputText] = useState("");  
   const [toDoItemsLi, setToDoItems] = useState([]);
 
   function handleChange(event) {
