@@ -3,7 +3,7 @@ name: Super-Linter
 on:
   push:
     branches:
-      - main  # only triger on main
+      - main  # triger on main branch
 
 jobs:
   super-lint:
@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4  #update to v4
+        uses: actions/checkout@v4  # update to v4 
 
       - name: Run Super-Linter
         uses: github/super-linter@v4
@@ -19,4 +19,6 @@ jobs:
           DEFAULT_BRANCH: main
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           VALIDATE_ALL_CODEBASE: true  # scan all files
-          DISABLE_ERRORS: false  
+          DISABLE_ERRORS: false  # if error CI fales
+          VALIDATE_JAVASCRIPT_ES: true  # turn on JavaScript (ESLint) inspection  
+          VALIDATE_TYPESCRIPT_ES: true  # turn on  TypeScript inspection (if there is TypeScript)
