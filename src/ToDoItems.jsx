@@ -1,5 +1,6 @@
 import { useState } from "react";
-import React from "react";
+import PropTypes from "prop-types"; 
+
 
 
 
@@ -41,6 +42,12 @@ function ToDoItems(props){
       </ul>
     )
 }
+
+ToDoItems.propTypes = {
+  hereIsProps: PropTypes.array.isRequired,  // making sure hereIsProps is an array
+  onDoubleClick: PropTypes.func.isRequired, // making sure  {onDoubleClick} is a function 
+};
+
 
 
 export default ToDoItems;
